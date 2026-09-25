@@ -3,153 +3,99 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>巧克力 的生日禮物 💌</title>
-    <meta name="description" content="巧克力的專屬網站！">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>西瓜🍉生日快樂 🎂 | 專屬生日信件 💌</title>
+    <meta name="description" content="給西瓜的專屬 K-pop 風格生日祝福信件！點擊信封開啟滿滿祝福。">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=4">
+    <link rel="stylesheet" href="styles.css?v=9">
 </head>
 
 <body>
 
-    <!-- Main App Container -->
+    <!-- Main App Container (Background set to 瓜瓜.jpg) -->
     <div id="app-container">
 
-        <!-- Canvas for Heart & Sparkle Particle Engine -->
+        <!-- Canvas for Heart, Sparkle & Lightstick Particle Engine -->
         <canvas id="particles-canvas"></canvas>
 
-        <!-- Ambient Floating Sparkle Icons -->
+        <!-- Ambient Floating K-pop Sparkles & Icons -->
         <div class="ambient-sparkles">
-            <span class="sparkle-icon" style="top: 10%; left: 6%; animation-delay: 0s;">✨</span>
-            <span class="sparkle-icon" style="top: 24%; right: 10%; animation-delay: 0.7s;">💙</span>
-            <span class="sparkle-icon" style="bottom: 22%; left: 8%; animation-delay: 1.2s;">🪄</span>
-            <span class="sparkle-icon" style="bottom: 14%; right: 8%; animation-delay: 0.4s;">✨</span>
-            <span class="sparkle-icon" style="top: 48%; left: 5%; animation-delay: 1.8s;">🦌</span>
-            <span class="sparkle-icon" style="top: 35%; right: 6%; animation-delay: 0.9s;">✨</span>
-            <span class="sparkle-icon" style="bottom: 28%; left: 12%; animation-delay: 1.5s;">💎</span>
-            <span class="sparkle-icon" style="top: 7%; left: 50%; animation-delay: 2.1s;">💙</span>
+            <span class="sparkle-icon" style="top: 8%; left: 6%; animation-delay: 0s;">✨</span>
+            <span class="sparkle-icon" style="top: 18%; right: 8%; animation-delay: 0.7s;">💙</span>
+            <span class="sparkle-icon" style="bottom: 22%; left: 8%; animation-delay: 1.2s;">🍉</span>
+            <span class="sparkle-icon" style="bottom: 14%; right: 10%; animation-delay: 0.4s;">💖</span>
+            <span class="sparkle-icon" style="top: 48%; left: 5%; animation-delay: 1.8s;">🐿️</span>
+            <span class="sparkle-icon" style="top: 36%; right: 6%; animation-delay: 0.9s;">🎂</span>
+            <span class="sparkle-icon" style="bottom: 32%; left: 12%; animation-delay: 1.5s;">💎</span>
+            <span class="sparkle-icon" style="top: 6%; left: 48%; animation-delay: 2.1s;">🌸</span>
         </div>
 
-        <!-- Top Navigation & Music Player Bar -->
-        <header class="top-nav">
-            <div class="brand-badge">
-                <span class="brand-icon">💙</span>
-                <span>TWICE - Be as ONE 💌</span>
-            </div>
-            <div class="nav-actions">
-                <button id="bgm-toggle-btn" class="action-btn" title="播放/暫停 Be as ONE 背景音樂">
-                    <span id="bgm-icon">🎵</span>
-                    <span id="bgm-text">Be as ONE: OFF</span>
-                </button>
-            </div>
-        </header>
-
-        <!-- Audio Element for TWICE Be as ONE -->
-        <audio id="be-as-one-audio" preload="auto" loop autoplay playsinline>
-            <source src="Be_as_ONE.mp4" type="audio/mp4">
-            <source src="Be_as_ONE.mp4" type="audio/mpeg">
-        </audio>
-
-        <!-- Central 3D Envelope Stage (Trilogy of 3 Envelopes) -->
-        <main class="stage-3d-trilogy">
-            <div class="trilogy-header">
-                <h1 class="trilogy-title">給유진（YUZHEN）的三封特別信件 💌</h1>
-                <p class="trilogy-subtitle">點擊信封解鎖每一章節的故事與專屬驚喜 ✨</p>
+        <!-- Central Mobile Single Envelope Stage -->
+        <main class="mobile-envelope-stage">
+            <div class="envelope-stage-header">
+                <div class="kpop-badge-pill">🎂 HAPPY BIRTHDAY SPECIAL</div>
+                <h1 class="envelope-main-title">給瓜瓜🍉的專屬信件 💌</h1>
+                <p class="envelope-main-subtitle">點擊中央信封解鎖生日祝福與故事 ✨</p>
             </div>
 
-            <div class="envelopes-grid">
-                <!-- Envelope 1: 初遇 -->
-                <div id="envelope-wrapper-1" class="envelope-wrapper envelope-theme-pink"
-                    onclick="openChapter(1, event)">
-                    <div class="chapter-pill">① 初遇 🌸</div>
-                    <div class="envelope">
-                        <div class="envelope-back"></div>
-                        <div class="flap-left"></div>
-                        <div class="flap-right"></div>
-                        <div class="flap-bottom"></div>
-                        <div class="flap-top"></div>
-                        <div class="wax-seal" title="點擊開啟第一封信：初遇">
-                            <div class="wax-seal-inner">
-                                <span>初遇</span>
-                            </div>
-                        </div>
-                        <div class="cover-text">
-                            <h2 class="cover-recipient-title">第一封：初遇 🌸</h2>
-                            <p class="cover-subtitle">故事開始的地方 ✨</p>
-                        </div>
+            <!-- Single Unique Curved K-pop Envelope Container -->
+            <div id="single-envelope-wrapper" class="single-envelope-wrapper unique-curved-envelope" onclick="openEnvelope(event)">
+                <div class="envelope-card-body">
+                    <!-- Top Gold VIP Badge -->
+                    <div class="envelope-gold-stamp">
+                        <span>VIP 🍉 PASS</span>
                     </div>
-                </div>
 
-                <!-- Envelope 2: 回憶 -->
-                <div id="envelope-wrapper-2" class="envelope-wrapper envelope-theme-purple"
-                    onclick="openChapter(2, event)">
-                    <div class="chapter-pill">② 熟悉 💫</div>
-                    <div class="envelope">
-                        <div class="envelope-back"></div>
-                        <div class="flap-left"></div>
-                        <div class="flap-right"></div>
-                        <div class="flap-bottom"></div>
-                        <div class="flap-top"></div>
-                        <div class="wax-seal" title="點擊開啟第二封信：熟悉">
-                            <div class="wax-seal-inner">
-                                <span>熟悉</span>
-                            </div>
-                        </div>
-                        <div class="cover-text">
-                            <h2 class="cover-recipient-title">第二封：熟悉 💫</h2>
-                            <p class="cover-subtitle">點點滴滴珍貴時光 ✨</p>
-                        </div>
+                    <!-- Left Postage Stamp -->
+                    <div class="envelope-postage-stamp">
+                        <span class="stamp-icon">🍉</span>
                     </div>
-                </div>
 
-                <!-- Envelope 3: Birthday cards (Lovelys Special) -->
-                <div id="envelope-wrapper-3" class="envelope-wrapper envelope-theme-blue"
-                    onclick="openChapter(3, event)">
-                    <div class="chapter-pill">③ Birthday cards 💌</div>
-                    <div class="envelope">
-                        <div class="envelope-back"></div>
-                        <div class="flap-left"></div>
-                        <div class="flap-right"></div>
-                        <div class="flap-bottom"></div>
-                        <div class="flap-top"></div>
-                        <div class="wax-seal" title="點擊開啟第三封信：Birthday cards">
-                            <div class="wax-seal-inner">
-                                <span>TWICE</span>
-                            </div>
-                        </div>
-                        <div class="cover-text">
-                            <h2 class="cover-recipient-title">第三封：Birthday cards 🎂</h2>
-                            <p class="cover-subtitle">專屬 Birthday cards 與 Lovelys 祝福 ✨</p>
+                    <!-- Holographic Shimmer Layer -->
+                    <div class="envelope-holo-overlay"></div>
+
+                    <!-- 3D Curved Top Flap -->
+                    <div class="curved-flap-top">
+                        <div class="curved-flap-border"></div>
+                    </div>
+
+                    <!-- Ribbon Bow Tie -->
+                    <div class="ribbon-bow-decoration">🎀</div>
+
+                    <!-- Center Heart Wax Seal Button -->
+                    <div class="wax-seal" title="點擊開啟信封">
+                        <div class="wax-seal-inner">
+                            <span class="seal-icon">💖</span>
+                            <span class="seal-text">開啟</span>
                         </div>
                     </div>
+
+                    <!-- Cover Recipient Text -->
+                    <div class="cover-text">
+                        <h2 class="cover-recipient-title">To: 西瓜🍉🎂</h2>
+                        <p class="cover-subtitle">點擊開啟瓜瓜的專屬祝福 ✨</p>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Tap Prompt Tag -->
+            <div class="open-prompt-tag" onclick="openEnvelope(event)">
+                💌 點擊信封開啟祝福內容 (TAP TO OPEN) ✨
             </div>
         </main>
 
-        <!-- The Letter Card (Standalone Modal Window with Chapter Tabs) -->
+        <!-- Opened Letter Modal Paper Card -->
         <article id="letter-paper" class="letter-paper-modal">
-            <button id="close-letter-btn" class="close-letter-btn" title="關閉信件"
+            <button id="close-letter-btn" class="close-letter-btn" title="關閉卡片"
                 onclick="closeEnvelope()">&times;</button>
-
-            <!-- Top Chapter Navigation Tabs inside Modal -->
-            <nav class="chapter-nav-bar">
-                <button class="chapter-tab-btn" id="tab-btn-1" onclick="switchChapter(1)">
-                    <span class="tab-icon">🌸</span> 第一封：初遇
-                </button>
-                <button class="chapter-tab-btn" id="tab-btn-2" onclick="switchChapter(2)">
-                    <span class="tab-icon">💫</span> 第二封：熟悉
-                </button>
-                <button class="chapter-tab-btn" id="tab-btn-3" onclick="switchChapter(3)">
-                    <span class="tab-icon">🎂</span> 第三封：Birthday cards
-                </button>
-            </nav>
 
             <div class="letter-inner-content">
                 <!-- Header with Title & Stamps -->
                 <div class="letter-header-decor">
                     <div id="badge-tag" class="badge-tag">
-                        💙 TZUYU LOVELY LETTER
+                        💙 TZUYU LOVELY BIRTHDAY LETTER
                     </div>
                     <div id="letter-stamps" class="letter-stamps">
                         <!-- Populated dynamically with mini Lovely stamps -->
@@ -158,37 +104,35 @@
 
                 <!-- Recipient Line -->
                 <div class="letter-recipient">
-                    To: <span id="letter-recipient-text">巧克力</span>
+                    To: <span id="letter-recipient-text">西瓜🍉</span>
                 </div>
 
-                <!-- Letter Body Message -->
+                <!-- Letter Body Text -->
                 <div id="letter-body-text" class="letter-body">
-                    <!-- Populated dynamically per chapter -->
+                    <!-- Populated dynamically -->
                 </div>
 
-                <!-- Polaroid Photo Memory Section -->
-                <div id="polaroid-frame" class="polaroid-container">
-                    <img id="polaroid-img" class="polaroid-img"
-                        src="https://zeekmagazine.com/wp-content/uploads/2025/09/1758345362-a18c6653ff456bdab53dfefd9d513967.jpg"
-                        alt="Special Memory Photo">
-                    <div id="polaroid-caption" class="polaroid-caption">Be as ONE ✨ TWICE 💙</div>
+                <!-- Memory Polaroid Section -->
+                <div id="polaroid-frame" class="polaroid-container" title="點擊放大圖片">
+                    <img id="polaroid-img" class="polaroid-img" src="images/33.jpg" alt="Special Memory Photo">
+                    <div id="polaroid-caption" class="polaroid-caption">💜 TWICE 💙</div>
                 </div>
 
                 <!-- Letter Footer & Sender -->
                 <div class="letter-footer">
                     <div class="letter-date" id="letter-date-text">2026.09.05</div>
                     <div class="letter-sender">
-                        Your friends, <span id="letter-sender-text">松鼠 🐿️</span>
+                        Your friend, <span id="letter-sender-text">松鼠 🐿️</span>
                     </div>
                 </div>
 
                 <!-- Interactive Lovelys Bar Inside Letter -->
                 <div id="lovelys-footer-bar" class="letter-lovelys-footer-bar">
                     <span class="bar-hint">
-                        點擊下方 TWICE Lovely 給你特別祝福與愛心雨 🌸
+                        點擊下方 TWICE Lovely 獲得專屬祝福與愛心雨 🌸
                     </span>
                     <div id="inner-lovelys-list" class="inner-lovelys-flex">
-                        <!-- Dynamic mini Lovely SVGs -->
+                        <!-- Dynamic mini Lovely icons -->
                     </div>
                 </div>
             </div>
@@ -200,12 +144,6 @@
         <!-- Toast Notification Popup -->
         <div id="toast-notification" class="toast-notification"></div>
 
-        <!-- Floating Music Reminder Badge -->
-        <div class="music-hint-badge" id="music-hint-badge">
-            <span class="hint-icon">🎵</span>
-            <span class="hint-text">如果覺得音樂太吵或是太感人，可以在右上角關掉音樂喔 💖</span>
-        </div>
-
         <!-- Image Zoom Lightbox Modal -->
         <div id="image-lightbox" class="image-lightbox" onclick="closeImageLightbox()">
             <button class="lightbox-close-btn" title="關閉照片" onclick="closeImageLightbox()">&times;</button>
@@ -216,8 +154,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="lovelys.js?v=3"></script>
-    <script src="app.js?v=3"></script>
+    <script src="lovelys.js?v=4"></script>
+    <script src="app.js?v=8"></script>
 </body>
 
 </html>
