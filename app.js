@@ -5,7 +5,7 @@
  */
 
 const LETTER_DATA = {
-    badge: '🎂 TWICE LOVELY BIRTHDAY LETTER',
+    badge: 'BIRTHDAY LETTER',
     recipient: '西瓜🍉',
     stamps: [LOVELYS[3], LOVELYS[8]],
     message: `哥（松鼠、蛋黃哥）先恭喜妳又長大一歲啦～
