@@ -82,28 +82,7 @@ html, body {
     z-index: 1;
 }
 
-/* Ambient Floating Sparkle Icons */
-.ambient-sparkles {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 5;
-}
 
-.sparkle-icon {
-    position: absolute;
-    font-size: 1.4rem;
-    animation: float-gentle 4s ease-in-out infinite;
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 0 0 12px var(--tzuyu-glow);
-    user-select: none;
-}
-
-@keyframes float-gentle {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(6deg); }
-}
 
 /* ==========================================================================
    MOBILE CENTRAL SINGLE UNIQUE CURVED ENVELOPE STAGE

@@ -73,10 +73,6 @@ function initParticleEngine() {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    for (let i = 0; i < 16; i++) {
-        particlesArray.push(createAmbientParticle());
-    }
-
     requestAnimationFrame(animateParticles);
 }
 
