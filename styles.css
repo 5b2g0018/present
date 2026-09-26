@@ -32,7 +32,7 @@
     --font-heading: 'Outfit', 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
     --font-handwriting: 'Caveat', 'Dancing Script', 'Kalam', cursive;
     --font-body: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
-    --font-letter: 'Zen Maru Gothic', 'DFKai-SB', '標楷體', 'Kaiti', serif;
+    --font-letter: 'DFKai-SB', '標楷體', 'BiauKai', 'Kaiti', serif;
 }
 
 /* Reset & Global Box Sizing */
@@ -391,6 +391,7 @@ html, body {
     align-items: center;
     border-bottom: 2px dashed #BAE6FD;
     padding-bottom: 10px;
+    padding-right: 36px;
 }
 
 .badge-tag {
