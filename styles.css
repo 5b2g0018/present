@@ -815,19 +815,36 @@ html, body {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .music-player-widget {
-        top: 14px;
-        right: 14px;
+        top: 10px;
+        left: 10px;
+        right: auto;
     }
     .music-toggle-btn {
-        padding: 5px 12px 5px 6px;
+        padding: 4px 12px 4px 6px;
+        gap: 6px;
+    }
+    .music-disc-wrapper {
+        width: 26px;
+        height: 26px;
+    }
+    .music-disc-icon {
+        font-size: 0.9rem;
     }
     .music-title {
         font-size: 0.72rem;
     }
     .music-status {
-        font-size: 0.64rem;
+        font-size: 0.62rem;
+    }
+
+    .letter-paper-modal {
+        width: 93vw;
+        max-height: 80vh;
+        top: 54%;
+        padding: 24px 16px 20px 16px;
     }
 }
+
 

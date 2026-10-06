@@ -288,13 +288,15 @@ function initInnerLetterDecorations() {
         const bottomRow = document.createElement('div');
         bottomRow.className = 'lovelys-row-bottom';
 
-        LOVELYS.slice(0, 8).forEach(lovely => {
+        LOVELYS.slice(0, 5).forEach(lovely => {
             const icon = createLovelyClickableIcon(lovely);
             topRow.appendChild(icon);
         });
 
-        const tzuyuIcon = createLovelyClickableIcon(LOVELYS[8]);
-        bottomRow.appendChild(tzuyuIcon);
+        LOVELYS.slice(5, 9).forEach(lovely => {
+            const icon = createLovelyClickableIcon(lovely);
+            bottomRow.appendChild(icon);
+        });
 
         innerList.appendChild(topRow);
         innerList.appendChild(bottomRow);
