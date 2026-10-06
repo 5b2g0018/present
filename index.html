@@ -6,7 +6,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>西瓜🍉生日快樂 🎂 | 專屬生日信件 💌</title>
-    <meta name="description" content="給西瓜的專屬 K-pop 風格生日祝福信件！點擊信封開啟滿滿祝福。">
+    <meta name="description" content="西瓜的專屬生日祝福信件！">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css?v=9">
@@ -132,6 +132,23 @@
             <button class="lightbox-close-btn" title="關閉照片" onclick="closeImageLightbox()">&times;</button>
             <img id="lightbox-img" src="" alt="Enlarged Photo" onclick="event.stopPropagation()">
             <div id="lightbox-caption" class="lightbox-caption" onclick="event.stopPropagation()"></div>
+        </div>
+
+        <!-- Background Audio Element with Autoplay -->
+        <audio id="bg-music" src="Be_as_ONE.mp4" autoplay loop preload="auto"></audio>
+
+        <!-- Floating K-pop Music Player Widget -->
+        <div id="music-player-widget" class="music-player-widget">
+            <button id="music-toggle-btn" class="music-toggle-btn" onclick="toggleMusic(event)"
+                title="點擊開關背景音樂 (TWICE - Be as ONE)">
+                <div class="music-disc-wrapper">
+                    <span id="music-disc-icon" class="music-disc-icon">💿</span>
+                </div>
+                <div class="music-info-text">
+                    <span class="music-title">TWICE - Be as ONE</span>
+                    <span id="music-status" class="music-status">音樂播放中 🎵</span>
+                </div>
+            </button>
         </div>
 
     </div>

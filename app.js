@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadLetterData();
     initInnerLetterDecorations();
     initPolaroidLightbox();
+    initMusicPlayer();
 });
 
 /* ==========================================================================
@@ -224,6 +225,9 @@ function loadLetterData() {
 function openEnvelope(e) {
     if (e) e.stopPropagation();
 
+    // Trigger background music automatically on user envelope click
+    playMusic();
+
     const wrapper = document.getElementById('single-envelope-wrapper');
     const paperModal = document.getElementById('letter-paper');
     const overlay = document.getElementById('modal-overlay');
@@ -341,3 +345,79 @@ function showToast(message) {
         toast.classList.remove('show');
     }, 3500);
 }
+
+/* ==========================================================================
+   5. BACKGROUND MUSIC CONTROLLER
+   ========================================================================== */
+let isMusicPlaying = false;
+
+function initMusicPlayer() {
+    const audio = document.getElementById('bg-music');
+    if (!audio) return;
+    audio.volume = 0.6; // Soft default background music volume
+
+    audio.addEventListener('play', () => {
+        isMusicPlaying = true;
+        const widget = document.getElementById('music-player-widget');
+        const status = document.getElementById('music-status');
+        if (widget) widget.classList.add('playing');
+        if (status) status.textContent = '播放中 🎶 (點擊暫停)';
+    });
+
+    audio.addEventListener('pause', () => {
+        isMusicPlaying = false;
+        const widget = document.getElementById('music-player-widget');
+        const status = document.getElementById('music-status');
+        if (widget) widget.classList.remove('playing');
+        if (status) status.textContent = '已暫停 ⏸️ (點擊播放)';
+    });
+
+    // 1. Try immediate playback upon entering web page
+    playMusic();
+
+    // 2. Browser Autoplay policy fallback: If initial play was blocked, start music on first user click/touch anywhere
+    const enableAutoplayOnInteraction = () => {
+        if (audio.paused) {
+            playMusic();
+        }
+        window.removeEventListener('click', enableAutoplayOnInteraction);
+        window.removeEventListener('touchstart', enableAutoplayOnInteraction);
+        window.removeEventListener('pointerdown', enableAutoplayOnInteraction);
+    };
+
+    window.addEventListener('click', enableAutoplayOnInteraction, { once: true });
+    window.addEventListener('touchstart', enableAutoplayOnInteraction, { once: true });
+    window.addEventListener('pointerdown', enableAutoplayOnInteraction, { once: true });
+}
+
+function playMusic() {
+    const audio = document.getElementById('bg-music');
+    if (!audio) return;
+
+    audio.play().then(() => {
+        isMusicPlaying = true;
+    }).catch(err => {
+        console.log('Autoplay blocked or playback error:', err);
+    });
+}
+
+function pauseMusic() {
+    const audio = document.getElementById('bg-music');
+    if (!audio) return;
+
+    audio.pause();
+    isMusicPlaying = false;
+}
+
+function toggleMusic(e) {
+    if (e) e.stopPropagation();
+    const audio = document.getElementById('bg-music');
+    if (!audio) return;
+
+    if (audio.paused) {
+        playMusic();
+    } else {
+        pauseMusic();
+    }
+}
+
